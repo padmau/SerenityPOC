@@ -12,7 +12,7 @@ import org.junit.runner.RunWith
 @CucumberOptions(
   features = Array("/home/padmaa/IdeaProjects/serenityPOC/src/test/resources/features"),
   glue = Array("stepdefs"),
-  plugin = Array ("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  plugin = Array ( "pretty", "html:target/test"),
   tags = Array("@test"),
   strict = false
 )

@@ -1,28 +1,33 @@
 package stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
+import org.openqa.selenium.support.ui.ExpectedConditions
 import org.scalatest.Matchers
 import pages.{AmazonPage, BasePage}
 
 /**
   * Created by padmaa on 24/04/18.
   */
-class serenityPOC extends ScalaDsl with EN with Matchers {
+class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage {
 
   Given("""^I navigate to amazon website$"""){()=>
-    BasePage.getURL
+    getURL
   }
 
-  And("""^I select (.*) in the product dropdown$"""){(productType:String)=>
+  And("""^I click the all items on the amazon home page$"""){()=>
+
+  }
+
+  And("""^I select Books in the product dropdown$"""){()=>
 
   }
 
   And("""^I type in '(.*)' in the search box$"""){(productName:String)=>
-
+    selectDropdown
   }
 
   And("""^I press enter$"""){()=>
-
+    pressEnter
   }
 
   Then("""^I am on the results page$"""){()=>
@@ -30,11 +35,11 @@ class serenityPOC extends ScalaDsl with EN with Matchers {
   }
 
   Then("""^I see that the first result has the name '(.*)' in it$"""){(result:String)=>
-
+          assertSearchText(result)
   }
 
   And("""^I hover mouse over '(.*)' to '(.*)' and click '(.*)'$"""){(productType1:String, productType2:String, productType3:String)=>
-    AmazonPage.mouseOverGrocery
+    mouseOverGrocery
   }
 
   And("""^I hover mouse over '(.*)' sub menu$"""){(productType2:String)=>
@@ -46,7 +51,8 @@ class serenityPOC extends ScalaDsl with EN with Matchers {
   }
 
   Then("""^I see '(.*)' in the H2 on results page$"""){(resultH2:String)=>
-    AmazonPage.assertGroceryText shouldBe "resultH2"
+     assertSearchText(resultH2)
+      closeBrowser
   }
 
   Then("""^I clear the shopping basket$"""){()=>
@@ -70,7 +76,7 @@ class serenityPOC extends ScalaDsl with EN with Matchers {
   }
 
   And("""^I close the browser$"""){()=>
-     BasePage.closeBrowser
+     closeBrowser
   }
 
 }

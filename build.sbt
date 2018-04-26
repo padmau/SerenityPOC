@@ -5,7 +5,7 @@ version := "1.0"
 scalaVersion := "2.11.11"
 
 libraryDependencies ++= Seq(
-"org.seleniumhq.selenium"%"selenium-firefox-driver"%"3.6.0",
+  "org.seleniumhq.selenium" % "selenium-firefox-driver" % "3.11.0",
 "org.seleniumhq.selenium"%"selenium-java"%"3.6.0",
 "org.seleniumhq.selenium"%"htmlunit-driver"%"2.28.1",
 "org.scalatest"%"scalatest_2.11"%"2.2.1",

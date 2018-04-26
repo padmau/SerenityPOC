@@ -1,10 +1,13 @@
 package pages
 
 
+import java.util.concurrent.TimeUnit
+
 import cucumber.api.scala.{EN, ScalaDsl}
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, JavascriptExecutor, Keys, WebElement}
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.interactions.Actions
+import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
 import org.scalatest.Matchers
 import org.scalatest.concurrent.Eventually
 import org.scalatest.selenium.WebBrowser
@@ -19,7 +22,8 @@ object BasePage extends BasePage
 
     val testUrl = "https://www.amazon.co.uk/"
     System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver")
-    var driver = new FirefoxDriver()
+    val driver = new FirefoxDriver()
+    val waitUntil = 30
 
     def getURL= {
       driver.navigate().to(testUrl)
@@ -29,6 +33,22 @@ object BasePage extends BasePage
       driver.findElement(by)
     }
 
+    def elementClick(by: By) = {
+      findElement(by).click()
+    }
+
+    def selectDropdown() = {
+
+     findElement(By.id("twotabsearchtextbox")).sendKeys("Harry Potter")
+    }
+
+    def pressEnter ={
+      findElement(By.id("twotabsearchtextbox")).sendKeys(Keys.ENTER)
+    }
+
+    def implicitWait  = driver.manage().timeouts().implicitlyWait(waitUntil, TimeUnit.SECONDS)
+
+    def explicitWait = new WebDriverWait(driver, waitUntil)
 
     val action = new Actions(driver)
 
