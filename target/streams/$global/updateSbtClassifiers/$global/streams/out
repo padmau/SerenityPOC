@@ -1,6 +1,7 @@
 [debug] Other repositories:
 [debug] Default repositories:
 [debug] Using inline dependencies specified in Scala.
+[debug] no default cache defined: set to /home/padmaa/.ivy2/cache
 [debug] :: resolving dependencies :: default#serenitypoc$sbt_2.10;1.0
 [debug] 	confs: [default]
 [debug] 	validate = true
@@ -158,7 +159,6 @@
 [debug] == resolving dependencies org.scala-lang#scala-reflect;2.10.6->org.scala-lang#scala-library;2.10.6 [runtime->compile]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.10.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-reflect;2.10.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-reflect;2.10.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
-[debug] no default cache defined: set to /home/padmaa/.ivy2/cache
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#jline;2.10.6 {optional=[compile(*), master(*)]} => dependency: org.scala-lang#jline;2.10.6 {optional=[compile(*), master(*)]}
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.10.6->org.scala-lang#scala-library;2.10.6 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.10.6->org.scala-lang#scala-library;2.10.6 [runtime->compile]
@@ -1775,9 +1775,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.13!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
-[debug] :: resolution report :: resolve 371ms :: artifacts dl 9ms
+[debug] :: resolution report :: resolve 2050ms :: artifacts dl 61ms
 [debug] 	report for default#serenitypoc$sbt_2.10;1.0 default produced in /home/padmaa/IdeaProjects/serenityPOC/target/resolution-cache/reports/default-serenitypoc$sbt_2.10-default.xml
-[debug] 	resolve done (371ms resolve - 9ms download)
+[debug] 	resolve done (2050ms resolve - 61ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#serenitypoc$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -2442,6 +2442,6 @@
 [debug] 	[NOT REQUIRED] com.jcraft#jsch;0.1.50!jsch.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.6!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#logging;0.13.13!logging.jar(src)
-[debug] :: resolution report :: resolve 170ms :: artifacts dl 19ms
+[debug] :: resolution report :: resolve 256ms :: artifacts dl 107ms
 [debug] 	report for default#serenitypoc$sources_2.10;1.0 default produced in /home/padmaa/IdeaProjects/serenityPOC/target/resolution-cache/reports/default-serenitypoc$sources_2.10-default.xml
-[debug] 	resolve done (170ms resolve - 19ms download)
+[debug] 	resolve done (256ms resolve - 107ms download)
