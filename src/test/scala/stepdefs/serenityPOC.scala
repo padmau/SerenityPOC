@@ -1,14 +1,19 @@
 package stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import org.openqa.selenium.support.ui.ExpectedConditions
+import net.thucydides.core.annotations.Steps
 import org.scalatest.Matchers
 import pages.{AmazonPage, BasePage}
 
 /**
   * Created by padmaa on 24/04/18.
   */
+
+
+
 class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage {
+
+  @Steps
 
   Given("""^I navigate to amazon website$"""){()=>
     getURL

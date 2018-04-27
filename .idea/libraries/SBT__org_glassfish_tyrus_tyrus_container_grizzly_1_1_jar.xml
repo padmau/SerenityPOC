@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.glassfish.tyrus:tyrus-container-grizzly:1.1:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.glassfish.tyrus/tyrus-container-grizzly/jars/tyrus-container-grizzly-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.glassfish.tyrus/tyrus-container-grizzly/srcs/tyrus-container-grizzly-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

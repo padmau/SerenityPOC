@@ -4,7 +4,7 @@
 		module="serenitypoc_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20180426110321"
+		publication="20180426171420"
 	>
 		<description>
 		serenityPOC
@@ -48,5 +48,9 @@
 		<dependency org="info.cukes" name="gherkin" rev="2.12.2" conf="compile->default(compile)"/>
 		<dependency org="info.cukes" name="cucumber-jvm" rev="1.2.2" conf="compile->default(compile)"/>
 		<dependency org="info.cukes" name="cucumber-core" rev="1.2.5" conf="compile->default(compile)"/>
+		<dependency org="net.serenity-bdd" name="serenity-core" rev="1.9.12" conf="compile->default(compile)"/>
+		<dependency org="net.serenity-bdd" name="serenity-cucumber" rev="1.9.5" conf="compile->default(compile)"/>
+		<dependency org="net.serenity-bdd" name="serenity-jira-plugin" rev="1.9.0" conf="compile->default(compile)"/>
+		<dependency org="net.serenity-bdd" name="serenity-junit" rev="1.9.12" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

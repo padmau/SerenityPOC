@@ -15,10 +15,14 @@ libraryDependencies ++= Seq(
 "info.cukes"%"cucumber-picocontainer"%"1.2.2",
 "junit"%"junit"%"4.11"%"test",
 "com.novocode" % "junit-interface" % "0.11" % "test",
-"org.scalaj"%%"scalaj-http"%"0.3.16",
   "org.scala-lang" % "scala-library" % "2.11.11",
+  "org.scalaj"%%"scalaj-http"%"0.3.16",
   "info.cukes" % "gherkin" % "2.12.2",
   "info.cukes" % "cucumber-jvm" % "1.2.2",
-  "info.cukes" % "cucumber-core" % "1.2.5"
+  "info.cukes" % "cucumber-core" % "1.2.5",
+  "net.serenity-bdd" % "serenity-core" % "1.9.12",
+  "net.serenity-bdd" % "serenity-cucumber" % "1.9.5",
+  "net.serenity-bdd" % "serenity-jira-plugin" % "1.9.0",
+  "net.serenity-bdd" % "serenity-junit" % "1.9.12"
 
 )
