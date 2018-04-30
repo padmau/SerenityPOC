@@ -1,6 +1,6 @@
 package pages
 
-import org.openqa.selenium.{By, Keys}
+import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.ExpectedConditions
 
 /**
@@ -18,6 +18,7 @@ trait AmazonPage extends BasePage {
   val dropdownValue  = "Books"
   val searchText = By.id("twotabsearchtextbox")
   val shoppingCartCount = By.cssSelector("#nav-cart-count")
+  val homePage = By.className("nav-logo-link")
 
   def mouseOverGrocery= {
     findElement(header)
@@ -40,8 +41,10 @@ trait AmazonPage extends BasePage {
     val count = findElement(shoppingCartCount).getText
     if(count.toInt>0) {
       findElement(shoppingCartCount).click()
-
     }
+  }
+  def navHomePage() = {
+    findElement(homePage).click()
   }
 
 
