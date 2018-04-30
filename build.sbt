@@ -5,7 +5,8 @@ version := "1.0"
 scalaVersion := "2.11.11"
 
 libraryDependencies ++= Seq(
-  "org.seleniumhq.selenium" % "selenium-firefox-driver" % "3.11.0",
+//  "net.serenity-bdd.maven.plugins" % "serenity-maven-plugin" % "1.9.12",
+  "org.seleniumhq.selenium" % "selenium-firefox-driver" % "3.6.0",
 "org.seleniumhq.selenium"%"selenium-java"%"3.6.0",
 "org.seleniumhq.selenium"%"htmlunit-driver"%"2.28.1",
 "org.scalatest"%"scalatest_2.11"%"2.2.1",
@@ -19,10 +20,10 @@ libraryDependencies ++= Seq(
   "org.scalaj"%%"scalaj-http"%"0.3.16",
   "info.cukes" % "gherkin" % "2.12.2",
   "info.cukes" % "cucumber-jvm" % "1.2.2",
-  "info.cukes" % "cucumber-core" % "1.2.5",
-  "net.serenity-bdd" % "serenity-core" % "1.9.12",
-  "net.serenity-bdd" % "serenity-cucumber" % "1.9.5",
-  "net.serenity-bdd" % "serenity-jira-plugin" % "1.9.0",
-  "net.serenity-bdd" % "serenity-junit" % "1.9.12"
+  "info.cukes" % "cucumber-core" % "1.2.5"
+//  "net.serenity-bdd" % "serenity-core" % "1.9.12",
+//  "net.serenity-bdd" % "serenity-cucumber" % "1.9.5",
+//  "net.serenity-bdd" % "serenity-jira-plugin" % "1.9.0",
+//  "net.serenity-bdd" % "serenity-junit" % "1.9.12"
 
 )

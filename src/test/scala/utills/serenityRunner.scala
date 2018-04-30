@@ -5,13 +5,13 @@ package utills
   */
 
 import cucumber.api.CucumberOptions
-import net.serenitybdd.cucumber.CucumberWithSerenity
+import cucumber.api.junit.Cucumber
 import org.junit.runner.RunWith
 
-@RunWith(classOf[CucumberWithSerenity])
+@RunWith(classOf[Cucumber])
 @CucumberOptions(
-  features = Array("/src/test/resources/features"),
-  glue = Array("/home/padmaa/Applications/hmrc-development-environment/hmrc/serenityPOC/src/test/scala/stepdefs"),
+  features = Array("/home/padmaa/Applications/hmrc-development-environment/hmrc/serenityPOC/src/test/resources/features"),
+  glue = Array("stepdefs"),
   plugin = Array("pretty","html:/home/padmaa/Applications/hmrc-development-environment/hmrc/serenityPOC/target/test"),
   tags = Array("@test"),
   strict = false

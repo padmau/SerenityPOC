@@ -10,34 +10,39 @@ trait AmazonPage extends BasePage {
 
   val dep = By.id("nav-link-shopall")
   val header = By.id("navbar")
-  val FandG = By.xpath("/html/body/div[2]/table/tbody/tr/td[3]/div[2]/ul/li[1]/a")
-  val grocery = By.linkText("Grocery")
+  val FandG = By.cssSelector("span.nav-hasPanel:nth-child(18)>span:nth-child(1)")
+  val grocery = By.cssSelector("div.nav-template:nth-child(17)>div:nth-child(2)>a:nth-child(1)")
   val groceryText = By.className("bxw-pageheader__title__text")
   val allItemsDropdown = By.id("searchDropdownBox")
   val all = By.className("nav-search-facade")
   val dropdownValue  = "Books"
-  val assertText = By.xpath("/html/body/div[1]/div[2]/div/div[3]/div[2]/div/div[4]/div[1]/div/ul/li[2]/div/div/div/div[2]/div[1]/div[1]/a/h2")
+  val searchText = By.id("twotabsearchtextbox")
+  val shoppingCartCount = By.cssSelector("#nav-cart-count")
 
   def mouseOverGrocery= {
     findElement(header)
-    explicitWait
-    ExpectedConditions.visibilityOfElementLocated(dep)
-    action.moveToElement(findElement(dep)).click().build().perform()
-    implicitWait
+    explicitWait.until(ExpectedConditions.visibilityOfElementLocated(dep))
+    action.moveToElement(findElement(dep)).build().perform()
+    explicitWait.until(ExpectedConditions.elementToBeClickable(FandG))
     findElement(FandG).click()
+    findElement(grocery).click()
   }
 
-
-
-
-  def assertSearchText (result: String) = {
-       findElement(assertText).getText should include (result)
+  def seelctAllItemsDropdown = {
+     selectDropdown(allItemsDropdown, dropdownValue)
   }
 
+  def searchValue() = {
+    findElement(searchText)
+  }
 
+  def clearShoppingCart() = {
+    val count = findElement(shoppingCartCount).getText
+    if(count.toInt>0) {
+      findElement(shoppingCartCount).click()
 
-
-
+    }
+  }
 
 
 }
