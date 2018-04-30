@@ -78,9 +78,8 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
     clickaddToBasket
   }
 
-  And("""^I see the shopping cart has (.*) item in it$"""){(numberOfItems:Int)=>
-    hoverOverBasket
-    assertOneItem should be(numberOfItems)
+  And("""^I see the shopping cart has (.*) in it$"""){(numberOfItems:String)=>
+    assertNumberOfItems should include(numberOfItems)
   }
 
   And("""^I close the browser$"""){()=>

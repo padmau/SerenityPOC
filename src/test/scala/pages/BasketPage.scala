@@ -10,14 +10,14 @@ trait BasketPage extends BasePage {
 
   val basketHover = By.cssSelector("img.huc-no-radius")
   val hiddenBasket = By.cssSelector(".sc-product-title")
-  val oneItem = By.cssSelector("#hlb-subcart > div:nth-child(1) > span:nth-child(1) > span:nth-child(1) > b:nth-child(1)")
+  val oneItem = By.cssSelector("#hlb-bottom-subcart > span:nth-child(1) > span:nth-child(1)")
 
 
   def hoverOverBasket = {
     findElement(basketHover)
     explicitWait.until(ExpectedConditions.visibilityOfElementLocated(hiddenBasket))
-    action.moveToElement(findElement(hiddenBasket)).build().perform()
+
   }
-  def assertOneItem = findElement(oneItem)
+  def assertNumberOfItems = findElement(oneItem).getText
 
 }
