@@ -75,6 +75,7 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
   }
 
   And("""^I click add to the basket on the product page$"""){()=>
+    assertLindtPageTitle
     clickaddToBasket
   }
 
