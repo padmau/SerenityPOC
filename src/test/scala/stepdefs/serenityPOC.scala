@@ -25,8 +25,8 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
     seelctAllItemsDropdown
   }
 
-  And("""^I type in '(.*)' in the search box$"""){(productName:String)=>
-    searchValue.sendKeys(productName)
+  And("""^I type in '(.*)' in the search box$"""){(productname: String)=>
+    searchValue.sendKeys()
   }
 
   And("""^I press enter$"""){()=>
