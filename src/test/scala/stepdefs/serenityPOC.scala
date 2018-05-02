@@ -2,7 +2,7 @@ package stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
 import org.scalatest.Matchers
-import pages.{AmazonPage, ResultsPage}
+import pages.{AmazonPage, BasketPage, LindtPage, ResultsPage}
 
 
 /**
@@ -11,7 +11,7 @@ import pages.{AmazonPage, ResultsPage}
 
 
 
-class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with ResultsPage {
+class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with ResultsPage with LindtPage with BasketPage {
 
   Given("""^I navigate to amazon website$"""){()=>
     getURL
@@ -38,7 +38,7 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
   }
 
   Then("""^I see that the first result has the name '(.*)' in it$"""){(resultH1:String)=>
-          assertH1BooksText should include(resultH1)
+    assertH1BooksText should include(resultH1)
   }
 
   And("""^I hover mouse over '(.*)' to '(.*)' and click '(.*)'$"""){(productType1:String, productType2:String, productType3:String)=>
@@ -62,19 +62,25 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
   }
 
   Then("""^I go to homepage of amazon website$"""){()=>
-
+    navHomePage
   }
 
   And("""^I select '(.*)' on the products page$"""){(productType:String)=>
+    implicitWait
+    clickLindtResult
+
+
+
 
   }
 
   And("""^I click add to the basket on the product page$"""){()=>
-
+    assertLindtPageTitle
+    clickaddToBasket
   }
 
-  And("""^I see the shopping cart has (.*) item in it$"""){(numberOfItems:Int)=>
-
+  And("""^I see the shopping cart has (.*) in it$"""){(numberOfItems:String)=>
+    assertNumberOfItems should include(numberOfItems)
   }
 
   And("""^I close the browser$"""){()=>
