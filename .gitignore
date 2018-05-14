@@ -21,12 +21,13 @@ modules
 *.html
 precompiled
 /.project
-project/project
-project/target
+project/project/
+project/target/
 /RUNNING_PID
 server.pid
 /.settings
 .target
+target/
 test-result
 tmp
 true
@@ -37,7 +38,7 @@ bin
 
 # sbt specific
 dist/*
-target/
+target/*
 lib_managed/
 src_managed/
 project/boot/

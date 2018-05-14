@@ -21,7 +21,7 @@ object BasePage extends BasePage
   trait BasePage extends WebBrowser with Eventually with ScalaDsl with EN with Matchers {
 
     val testUrl = "https://www.amazon.co.uk/"
-    System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver")
+    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver")
     val driver = new FirefoxDriver()
     val waitUntil = 30
 

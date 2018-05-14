@@ -6,8 +6,7 @@ Feature: As a amazon online shopping user I would wish to explore the website
 # tag::woolscenario[]
   Scenario: Dummy Scenario 1
     Given I navigate to amazon website
-<<<<<<< HEAD
-   And I type in 'Harry Potter' in the search box
+    And I type in 'Harry Potter' in the search box
    And I press enter
 # end::woolscenario[]
 
@@ -25,7 +24,6 @@ Feature: As a amazon online shopping user I would wish to explore the website
   Scenario: Dummy Scenario 4
     Given I navigate to amazon website4
     And I type in 'Harry Potter' in the search box4
-=======
     And I select Books in the product dropdown
     And I type in 'Harry Potter' in the search box
     And I press enter
@@ -46,6 +44,3 @@ Feature: As a amazon online shopping user I would wish to explore the website
     And I select 'Lindt Lindor Milk Chocolate Bar 100 g (Pack of 10)' on the products page
     When I click add to the basket on the product page
     Then I see the shopping cart has 1 item in it
-
-
->>>>>>> 869512c04806da348d97e43a420e720726517bce
