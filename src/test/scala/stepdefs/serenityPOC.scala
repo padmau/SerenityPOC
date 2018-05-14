@@ -1,8 +1,9 @@
 package stepdefs
 
+import cucumber.api.PendingException
 import cucumber.api.scala.{EN, ScalaDsl}
 import net.thucydides.core.annotations.Steps
-import org.scalatest.Matchers
+import org.scalatest.{Failed, Matchers}
 import pages.{AmazonPage, BasePage}
 
 /**
@@ -10,13 +11,20 @@ import pages.{AmazonPage, BasePage}
   */
 
 
-
+@net.thucydides.core.annotations.Steps
 class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage {
 
-  @Steps
 
-  Given("""^I navigate to amazon website$"""){()=>
+  Given("""^I navigate to amazon website$"""){ () =>
     getURL
+  }
+
+  Given("""^I navigate to amazon website3$"""){ () =>
+    throw new PendingException
+  }
+
+  Given("""^I navigate to amazon website4$"""){ () =>
+    Failed
   }
 
   And("""^I click the all items on the amazon home page$"""){()=>
@@ -28,7 +36,15 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage {
   }
 
   And("""^I type in '(.*)' in the search box$"""){(productName:String)=>
-    selectDropdown
+   selectDropdown
+  }
+
+  And("""^I type in '(.*)' in the search box3$"""){(productName:String)=>
+    throw new PendingException
+  }
+
+  And("""^I type in '(.*)' in the search box4$"""){(productName:String)=>
+    Failed
   }
 
   And("""^I press enter$"""){()=>
@@ -40,7 +56,7 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage {
   }
 
   Then("""^I see that the first result has the name '(.*)' in it$"""){(result:String)=>
-          assertSearchText(result)
+    assertSearchText(result)
   }
 
   And("""^I hover mouse over '(.*)' to '(.*)' and click '(.*)'$"""){(productType1:String, productType2:String, productType3:String)=>
@@ -56,8 +72,8 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage {
   }
 
   Then("""^I see '(.*)' in the H2 on results page$"""){(resultH2:String)=>
-     assertSearchText(resultH2)
-      closeBrowser
+    assertSearchText(resultH2)
+    closeBrowser
   }
 
   Then("""^I clear the shopping basket$"""){()=>
@@ -81,7 +97,7 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage {
   }
 
   And("""^I close the browser$"""){()=>
-     closeBrowser
+    closeBrowser
   }
 
 }
