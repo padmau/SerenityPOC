@@ -4,7 +4,11 @@
 		module="serenitypoc-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
+<<<<<<< HEAD
 		publication="20180513004122"
+=======
+		publication="20180514123300"
+>>>>>>> 869512c04806da348d97e43a420e720726517bce
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
