@@ -2,29 +2,19 @@ package stepdefs
 
 import cucumber.api.PendingException
 import cucumber.api.scala.{EN, ScalaDsl}
-<<<<<<< HEAD
 import net.thucydides.core.annotations.Steps
 import org.scalatest.{Failed, Matchers}
 import pages.{AmazonPage, BasePage}
-=======
 import org.scalatest.Matchers
 import pages.{AmazonPage, BasketPage, LindtPage, ResultsPage}
-
->>>>>>> 869512c04806da348d97e43a420e720726517bce
 
 /**
   * Created by padmaa on 24/04/18.
   */
 
 
-<<<<<<< HEAD
 @net.thucydides.core.annotations.Steps
-class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage {
-
-=======
-
 class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with ResultsPage with LindtPage with BasketPage {
->>>>>>> 869512c04806da348d97e43a420e720726517bce
 
   Given("""^I navigate to amazon website$"""){ () =>
     getURL
@@ -46,9 +36,8 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
     seelctAllItemsDropdown
   }
 
-<<<<<<< HEAD
   And("""^I type in '(.*)' in the search box$"""){(productName:String)=>
-   selectDropdown
+   //selectDropdown
   }
 
   And("""^I type in '(.*)' in the search box3$"""){(productName:String)=>
@@ -57,10 +46,6 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
 
   And("""^I type in '(.*)' in the search box4$"""){(productName:String)=>
     Failed
-=======
-  And("""^I type in '(.*)' in the search box$"""){(productname: String)=>
-    searchValue.sendKeys()
->>>>>>> 869512c04806da348d97e43a420e720726517bce
   }
 
   And("""^I press enter$"""){()=>
@@ -71,13 +56,8 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
 
   }
 
-<<<<<<< HEAD
   Then("""^I see that the first result has the name '(.*)' in it$"""){(result:String)=>
     assertSearchText(result)
-=======
-  Then("""^I see that the first result has the name '(.*)' in it$"""){(resultH1:String)=>
-    assertH1BooksText should include(resultH1)
->>>>>>> 869512c04806da348d97e43a420e720726517bce
   }
 
   And("""^I hover mouse over '(.*)' to '(.*)' and click '(.*)'$"""){(productType1:String, productType2:String, productType3:String)=>
@@ -92,14 +72,13 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
 
   }
 
-<<<<<<< HEAD
-  Then("""^I see '(.*)' in the H2 on results page$"""){(resultH2:String)=>
+  Then("""^I see '(.*)' in the H2 on results page$""") { (resultH2: String) =>
     assertSearchText(resultH2)
     closeBrowser
-=======
+  }
+
   Then("""^I see '(.*)' in the H1 on results page$"""){(resultH1:String)=>
     assertH1GroceryText should include(resultH1)
->>>>>>> 869512c04806da348d97e43a420e720726517bce
   }
 
   Then("""^I clear the shopping basket$"""){()=>
@@ -113,9 +92,6 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
   And("""^I select '(.*)' on the products page$"""){(productType:String)=>
     implicitWait
     clickLindtResult
-
-
-
 
   }
 
