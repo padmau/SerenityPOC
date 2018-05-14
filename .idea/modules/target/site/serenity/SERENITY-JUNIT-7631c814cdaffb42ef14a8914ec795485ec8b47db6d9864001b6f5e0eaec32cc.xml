@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="As a amazon online shopping user I would wish to explore the website" skipped="0" tests="1" time="0.54" timestamp="2018-04-26 05:26:51"><testcase name="Select books in the search and type in harry potter and check the first result option has harry potter in it"><error type="java.lang.AbstractMethodError"/><system-err>null
-cucumber.runner.Runner.addTestStepsForPickleSteps(Runner.java:115)
-cucumber.runner.Runner.createTestCaseForPickle(Runner.java:99)
-cucumber.runner.Runner.runPickle(Runner.java:79)
-✽.I navigate to amazon website(/home/padmaa/Applications/hmrc-development-environment/hmrc/serenityPOC/src/test/resources/features/serenityPOC.feature:7)
-</system-err></testcase></testsuite>
