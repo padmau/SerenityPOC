@@ -21,7 +21,7 @@ object BasePage extends BasePage
   trait BasePage extends WebBrowser with Eventually with ScalaDsl with EN with Matchers {
 
     val testUrl = "https://www.amazon.co.uk/"
-    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver")
+    System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver")
     val driver = new FirefoxDriver()
     val waitUntil = 30
 
@@ -40,7 +40,6 @@ object BasePage extends BasePage
     def selectDropdown(by: By, text: String) = {
       val select = new Select(findElement(by))
       select.selectByVisibleText(text)
-     findElement(By.id("twotabsearchtextbox")).sendKeys("Harry Potter")
     }
 
     def pressEnter ={
