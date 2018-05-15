@@ -1,11 +1,8 @@
-package stepdefs
+/*package stepdefs
 
 import cucumber.api.PendingException
 import cucumber.api.scala.{EN, ScalaDsl}
-import net.thucydides.core.annotations.Steps
 import org.scalatest.{Failed, Matchers}
-import pages.{AmazonPage, BasePage}
-import org.scalatest.Matchers
 import pages.{AmazonPage, BasketPage, LindtPage, ResultsPage}
 
 /**
@@ -90,8 +87,7 @@ class serenityPOC extends ScalaDsl with EN with Matchers with AmazonPage with Re
   }
 
   And("""^I select '(.*)' on the products page$"""){(productType:String)=>
-    implicitWait
-    clickLindtResult
+    clickFirstResult
 
   }
 
