@@ -10,8 +10,7 @@ import org.junit.runner.RunWith
 
 @RunWith(classOf[CucumberWithSerenity])
 @CucumberOptions(
-  features = Array("/home/user01/Applications/hmrc-development-environment/hmrc/serenityPOC/src/test/resources/features"),
-  glue = Array("stepdefs")
+  features = Array("/home/user01/Applications/hmrc-development-environment/hmrc/serenityPOC/src/test/resources/features")
 )
 class SerenityPOCRunner
 

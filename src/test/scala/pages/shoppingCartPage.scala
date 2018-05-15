@@ -9,12 +9,11 @@ import org.openqa.selenium.By
   */
 object shoppingCartPage extends PageObject with BasePage {
 
-  val delete = ".sc-action-delete > span:nth-child(1) > input:nth-child(1)"
+  val deleteButton = ".sc-action-delete > span:nth-child(1) > input:nth-child(1)"
 
-  def this
 
   def clickDelete() {
-    this.elementClick(By.cssSelector(delete))
+    elementClick(By.cssSelector(deleteButton))
   }
 
 }

@@ -30,12 +30,12 @@ trait serenityTestPage extends WebBrowser with Eventually with ScalaDsl with EN 
   val FandG = "span.nav-hasPanel:nth-child(18)>span:nth-child(1)"
   val grocery = "div.nav-template:nth-child(17)>div:nth-child(2)>a:nth-child(1)"
 
-  def findEx(text: String) {
+  def findEx(text: String) = {
     new WebDriverWait(getDriver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("searchDropdownBox")))
     selectFromDropdown(getDriver.findElement(By.id("searchDropdownBox")), text)
   }
 
-  def searchBox(text: String) {
+  def searchBox(text: String) = {
     findElement(By.id(searchBox)).sendKeys(text)
   }
 
@@ -43,7 +43,7 @@ trait serenityTestPage extends WebBrowser with Eventually with ScalaDsl with EN 
     findElement(By.id(searchBox)).sendKeys(Keys.ENTER)
   }
 
-  def mouseHover {
+  def mouseHover() {
     new WebDriverWait(getDriver(), 10).until(ExpectedConditions.presenceOfElementLocated(By.id("nav-link-shopall")))
     new Actions(getDriver).moveToElement(find(By.id(dep))).build.perform()
     new WebDriverWait(getDriver, 10).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(FandG)))
@@ -55,7 +55,7 @@ trait serenityTestPage extends WebBrowser with Eventually with ScalaDsl with EN 
     elementClick(By.id(shoppingCart))
   }
 
-  def countShoppingCart: Int = {
+  def countShoppingCart() = {
     val count = findElement(By.id(shoppingCartCount)).getText
     val count1 = count.toInt
     System.out.println("****************************" + count1)

@@ -1,8 +1,5 @@
 package stepdefs
 
-import cucumber.api.scala.{EN, ScalaDsl}
-import net.thucydides.core.annotations.Step
-import org.scalatest.Matchers
 import pages.serenityTestPage
 
 
@@ -13,19 +10,19 @@ import pages.serenityTestPage
 object amazonBaseSteps extends amazonBaseSteps
   trait amazonBaseSteps extends serenityTestPage{
 
-  def openHomePage()= {
+  def openHomePage { ()=>
     serenityTestPage.open()
   }
 
-  def selectDropdown(text: String) ={
+  def selectDropdown { (text: String) =>
     serenityTestPage.findEx(text)
   }
 
-  def enterTextSearchBox(text: String) ={
+  def enterTextSearchBox { (text: String)=>
     serenityTestPage.searchBox(text)
   }
 
-  def performMouseHover(text: String)= {
+  def performMouseHover { ()=>
     serenityTestPage.mouseHover()
   }
 
