@@ -14,4 +14,3 @@ Feature: As a amazon online shopping user I would wish to explore the website
       |Books   |Harry Potter|Harry Potter|
       |Beauty  |Clinique    |Clinique    |
       |Clothing|Oasis       |Oasis       |
-    

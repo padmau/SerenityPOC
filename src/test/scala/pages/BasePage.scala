@@ -40,7 +40,6 @@ object BasePage extends BasePage
     def selectDropdown(by: By, text: String) = {
       val select = new Select(findElement(by))
       select.selectByVisibleText(text)
-     findElement(By.id("twotabsearchtextbox")).sendKeys("Harry Potter")
     }
 
     def pressEnter ={
