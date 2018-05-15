@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.{ExpectedConditions, WebDriverWait}
   * Created by user01 on 15/05/18.
   */
 object serenityTestPage extends serenityTestPage
-@DefaultUrl("https://www.amazon.co.uk/")
+@net.thucydides.core.annotations.Steps
 trait serenityTestPage extends BasePage
  {
 
@@ -43,7 +43,7 @@ trait serenityTestPage extends BasePage
 
    def findEx(text:String) = {
      new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("searchDropdownBox")))
-     selectDropdown(By.id(dropdown), text)
+     select(By.id(dropdown), text)
    }
 
   def clickShoppingCart() {

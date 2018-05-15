@@ -18,15 +18,19 @@ import org.scalatest.selenium.WebBrowser
   */
 object BasePage extends BasePage
 
-  trait BasePage extends WebBrowser with Eventually with ScalaDsl with EN with Matchers {
+trait BasePage extends Eventually {
 
     val testUrl = "https://www.amazon.co.uk/"
-    System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver")
+    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver")
     val driver = new FirefoxDriver()
-    val waitUntil = 30
+    val waitUntil = 10
 
     def getURL= {
       driver.navigate().to(testUrl)
+    }
+
+    def webDriverWait(): Unit ={
+      driver.manage().timeouts().implicitlyWait(waitUntil, TimeUnit.SECONDS)
     }
 
     def findElement(by: By) = {
@@ -37,7 +41,7 @@ object BasePage extends BasePage
       findElement(by).click()
     }
 
-    def selectDropdown(by: By, text: String) = {
+    def select(by: By, text: String) = {
       val select = new Select(findElement(by))
       select.selectByVisibleText(text)
     }

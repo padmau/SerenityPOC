@@ -1,5 +1,6 @@
 package stepdefs
 
+import net.thucydides.core.annotations.Step
 import pages.serenityTestPage
 
 
@@ -8,19 +9,24 @@ import pages.serenityTestPage
   */
 
 object amazonBaseSteps extends amazonBaseSteps
-@net.thucydides.core.annotations.Steps
-  trait amazonBaseSteps extends serenityTestPage {
 
-  def selectDropdown { (text: String) =>
-    serenityTestPage.findEx(text)
+
+trait amazonBaseSteps extends serenityTestPage {
+@Step
+  def openHomePage () {
+    getURL
   }
-
-  def enterTextSearchBox { (text: String)=>
-    serenityTestPage.searchBox(text)
+@Step
+  def selectDropdown (text: String) {
+    findEx(text)
   }
-
-  def performMouseHover { ()=>
-    serenityTestPage.mouseHover()
+@Step
+  def enterTextSearchBox (text: String) {
+    searchBox(text)
+  }
+@Step
+  def performMouseHover(){
+    mouseHover()
   }
 
 }
