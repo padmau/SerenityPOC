@@ -5,13 +5,13 @@ import org.hamcrest.CoreMatchers
 import org.junit.Assert._
 import org.openqa.selenium.By
 import org.scalatest.Matchers
-import pages.{resultsPage, serenityTestPage}
+import pages.{resultsPage, DealsPage}
 /**
   * Created by user01 on 15/05/18.
   */
 
 @net.thucydides.core.annotations.Steps
-class amazonDropdownSteps extends ScalaDsl with EN with Matchers with amazonBaseSteps with resultsPage {
+class amazonDropdownSteps extends ScalaDsl with EN with Matchers with amazonBaseSteps with resultsPage with DealsPage{
 
   Given("^I navigate to amazon website$") { ()=>
     openHomePage
@@ -59,5 +59,30 @@ class amazonDropdownSteps extends ScalaDsl with EN with Matchers with amazonBase
   Given("^I see the shopping cart has (.*) item in it$"){ (count: Int) =>
     assertEquals(countShoppingCart.toLong, count.toLong)
   }
+
+  Given("^I click Today's Deals$") {
+    clickTodaysDeal()
+  }
+
+  Given("^I click (.*) pounds deals$"){ (count: Int) =>
+    clickUnder15PoundsDeals()
+  }
+
+  Given("^I click Shop by Department hidden list$") {
+     clickAllItemsHiddenList()
+  }
+
+  Given("^I click (.*) in Home,Garden,Pets and DIY department$"){ (department1: String) =>
+      clickFurniture()
+  }
+
+  Given("^I click (.*) in the furniture department$") { (product: String) =>
+    clickSofaAndCOuches()
+  }
+
+  Given("^I see (.*) in the H2$"){ (text: String) =>
+     getTextSofaAndCOuches()
+  }
+
 
 }

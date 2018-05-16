@@ -18,8 +18,10 @@ trait serenityTestPage extends BasePage
   val shoppingCart = "nav-cart"
   val addToBasket = "add-to-cart-button"
    val dropdown = "searchDropdownBox"
-
-
+   val allHiddenItemsList = "nav-link-shopall"
+   val furniture = "#shopAllLinks > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(3) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(3) > a:nth-child(1)"
+   val sofaAndCouches = "div.a-span3:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > span:nth-child(1)"
+   val textSofaAndCouches = ".bxw-pageheader__title__text > h1:nth-child(1)"
 
   val dep = "nav-link-shopall"
   val FandG = "span.nav-hasPanel:nth-child(18)>span:nth-child(1)"
@@ -34,7 +36,7 @@ trait serenityTestPage extends BasePage
   }
 
   def mouseHover() {
-    new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("nav-link-shopall")))
+    new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id(dep)))
     new Actions(driver).moveToElement(findElement(By.id(dep))).build.perform()
     new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(FandG)))
     elementClick(By.cssSelector(FandG))
@@ -64,4 +66,22 @@ trait serenityTestPage extends BasePage
   def clickAddToBasket() {
     elementClick(By.id(addToBasket))
   }
+
+   def clickAllItemsHiddenList() {
+     webDriverWait()
+     //action.moveToElement(findElement(By.id(allHiddenItemsList))).build().perform()
+     elementClick(By.id(allHiddenItemsList))
+   }
+
+   def clickFurniture() {
+     elementClick(By.cssSelector(furniture))
+   }
+
+   def clickSofaAndCOuches() {
+     elementClick(By.cssSelector(sofaAndCouches))
+   }
+
+   def getTextSofaAndCOuches() {
+     findElement(By.cssSelector(textSofaAndCouches))
+   }
 }
