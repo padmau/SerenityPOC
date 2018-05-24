@@ -3,14 +3,11 @@ package pages
 
 import java.util.concurrent.TimeUnit
 
-import cucumber.api.scala.{EN, ScalaDsl}
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.support.ui.{Select, WebDriverWait}
 import org.openqa.selenium.{By, Keys}
-import org.scalatest.Matchers
 import org.scalatest.concurrent.Eventually
-import org.scalatest.selenium.WebBrowser
 
 
 /**
@@ -21,7 +18,7 @@ object BasePage extends BasePage
 trait BasePage extends Eventually {
 
     val testUrl = "https://www.amazon.co.uk/"
-    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver")
+    System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver")
     val driver = new FirefoxDriver()
     val waitUntil = 10
 

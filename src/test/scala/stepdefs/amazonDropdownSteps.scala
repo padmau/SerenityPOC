@@ -1,11 +1,10 @@
 package stepdefs
 
 import cucumber.api.scala.{EN, ScalaDsl}
-import org.hamcrest.CoreMatchers
 import org.junit.Assert._
 import org.openqa.selenium.By
 import org.scalatest.Matchers
-import pages.{resultsPage, DealsPage}
+import pages.{DealsPage, resultsPage}
 /**
   * Created by user01 on 15/05/18.
   */
@@ -64,8 +63,8 @@ class amazonDropdownSteps extends ScalaDsl with EN with Matchers with amazonBase
     clickTodaysDeal()
   }
 
-  Given("^I click (.*) pounds deals$"){ (count: Int) =>
-    clickUnder15PoundsDeals()
+  Given("^I click (.*) pounds deals$"){ (count: String) =>
+    clickUnder15PoundsDeals(count)
   }
 
   Given("^I click Shop by Department hidden list$") {
