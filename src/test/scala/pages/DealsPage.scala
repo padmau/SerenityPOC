@@ -17,7 +17,7 @@ trait DealsPage extends BasePage{
     findElement(By.cssSelector(todaysDeals)).click()
   }
 
-  def clickUnder15PoundsDeals(count: String) {
+  def clickUnder15PoundsDeals(count: Int) {
     try {
       findElement(By.cssSelector(dealsUnder15)).click()
 

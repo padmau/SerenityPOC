@@ -63,7 +63,7 @@ class amazonDropdownSteps extends ScalaDsl with EN with Matchers with amazonBase
     clickTodaysDeal()
   }
 
-  Given("^I click (.*) pounds deals$"){ (count: String) =>
+  Given("^I click (.*) pounds deals$"){ (count: Int) =>
     clickUnder15PoundsDeals(count)
   }
 
