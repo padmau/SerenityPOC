@@ -17,9 +17,10 @@ trait DealsPage extends BasePage{
     findElement(By.cssSelector(todaysDeals)).click()
   }
 
-  def clickUnder15PoundsDeals() {
+  def clickUnder15PoundsDeals(count: Int) {
     try {
       findElement(By.cssSelector(dealsUnder15)).click()
+
     }catch{
       case e: Exception => println("*********************"+e)
     }

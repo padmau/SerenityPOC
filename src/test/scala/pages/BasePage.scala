@@ -3,14 +3,11 @@ package pages
 
 import java.util.concurrent.TimeUnit
 
-import cucumber.api.scala.{EN, ScalaDsl}
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.support.ui.{Select, WebDriverWait}
 import org.openqa.selenium.{By, Keys}
-import org.scalatest.Matchers
-import org.scalatest.concurrent.Eventually
-import org.scalatest.selenium.WebBrowser
+import org.scalatest.concurrent.Eventually;
 
 
 /**
@@ -21,44 +18,44 @@ object BasePage extends BasePage
 trait BasePage extends Eventually {
 
     val testUrl = "https://www.amazon.co.uk/"
-    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver")
+    System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver")
     val driver = new FirefoxDriver()
     val waitUntil = 10
 
-    def getURL= {
-      driver.navigate().to(testUrl)
-    }
+      def getURL = {
+        driver.navigate().to(testUrl)
+      }
 
-    def webDriverWait(): Unit ={
-      driver.manage().timeouts().implicitlyWait(waitUntil, TimeUnit.SECONDS)
-    }
+      def webDriverWait(): Unit = {
+        driver.manage().timeouts().implicitlyWait(waitUntil, TimeUnit.SECONDS)
+      }
 
-    def findElement(by: By) = {
-      driver.findElement(by)
-    }
+      def findElement(by: By) = {
+        driver.findElement(by)
+      }
 
-    def elementClick(by: By) = {
-      findElement(by).click()
-    }
+      def elementClick(by: By) = {
+        findElement(by).click()
+      }
 
-    def select(by: By, text: String) = {
-      val select = new Select(findElement(by))
-      select.selectByVisibleText(text)
-    }
+      def select(by: By, text: String) = {
+        val select = new Select(findElement(by))
+        select.selectByVisibleText(text)
+      }
 
-    def pressEnter ={
-      findElement(By.id("twotabsearchtextbox")).sendKeys(Keys.ENTER)
-    }
+      def pressEnter = {
+        findElement(By.id("twotabsearchtextbox")).sendKeys(Keys.ENTER)
+      }
 
-    def implicitWait  = driver.manage().timeouts().implicitlyWait(waitUntil, TimeUnit.SECONDS)
+      def implicitWait = driver.manage().timeouts().implicitlyWait(waitUntil, TimeUnit.SECONDS)
 
-    def explicitWait = new WebDriverWait(driver, waitUntil)
+      def explicitWait = new WebDriverWait(driver, waitUntil)
 
-    val action = new Actions(driver)
+      val action = new Actions(driver)
 
-    def closeBrowser = {
-      driver.quit()
-    }
+      def closeBrowser = {
+        driver.quit()
+      }
     }
 
 
