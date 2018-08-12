@@ -44,3 +44,6 @@ Feature: As a amazon online shopping user I would wish to explore the website
      And I click Sofa and couches in the furniture department
      Then I see Sofa and Couches in the H2
 
+   @newScenario
+   Scenario: Search by product in shop by department
+     
